@@ -2,23 +2,29 @@
 
 A Ray Tracer written in C++. 
 
-## build and installation
+## Requirements
+
+- [Git](https://git-scm.com/)
+- [CMake](https://cmake.org/download/) version 3.25 or higher
+
+## Build
 
 1. Clone the repository with submodules
  
     ```
-    git clone --recurse-submodules https://github.com/Kociarz/RayTracer.git
+    git clone --depth=1 --recurse-submodules https://github.com/Kociarz/RayTracer.git
     ```
 
 2. Bootrap the project
 
    - Windows
         ```
-        ./bootstrap.bat
+        .\bootstrap.bat
         ```
     
     - Linux
         ```
+        chmod +x bootstrap.sh
         ./bootstrap.sh
         ```
 
