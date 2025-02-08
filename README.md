@@ -5,7 +5,8 @@ A Ray Tracer written in C++.
 ## Requirements
 
 - [Git](https://git-scm.com/)
-- [CMake](https://cmake.org/download/) version 3.25 or higher
+- [CMake](https://cmake.org/download/) version **3.25** or higher
+- [RayLib requirements](https://github.com/raysan5/raylib/wiki/Working-on-GNU-Linux)
 
 ## Build
 
@@ -39,5 +40,5 @@ A Ray Tracer written in C++.
 
 ## What I learned from this project
 
-- How to use raylib for opening windows and drawing pixels
+- How to use raylib for opening windows and drawing stuff on the screen
 - How to ray tracing works
