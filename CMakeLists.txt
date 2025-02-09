@@ -12,7 +12,7 @@ project("RayTracer" LANGUAGES CXX VERSION 0.0.1)
 add_subdirectory(external/raylib)
 
 add_executable(${PROJECT_NAME} "src/Main.cpp")
-target_include_directories(${PROJECT_NAME} PRIVATE external/raylib/src)
+target_link_directories(${PROJECT_NAME} PRIVATE external/raylib/build/Release)
 target_link_libraries(${PROJECT_NAME} PRIVATE raylib)
 
 

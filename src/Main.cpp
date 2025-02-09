@@ -1,39 +1,36 @@
-// #include "raylib.h"
+#include "raylib.h"
 
-#include <iostream>
 #include <fstream>
-
+#include <iostream>
 
 int main()
 {
-    
-    constexpr int image_width = 256;
-    constexpr int image_height = 256;
+    constexpr int window_width = 256;
+    constexpr int window_height = 256;
 
-    std::ofstream file("../image.ppm");
-    if (!file.is_open())
+    InitWindow(window_width, window_height, "image");
+
+    while (!WindowShouldClose())
     {
-        std::cerr << "Error opening file!" << '\n';
-        return -1;
-    }
+        BeginDrawing();
+        ClearBackground(WHITE);
 
-   file << "P3\n" << image_width << ' ' << image_height << "\n255\n";
-
-    for (int i = 0; i < image_height; ++i)
-    {
-        for (int j = 0; j < image_width; j++)
+        for (auto i = 0; i < window_height; ++i)
         {
-            auto red = static_cast<double>(i) / (image_width - 1);
-            auto green = static_cast<double>(j) / (image_height - 1);
-            auto blue = 0.0;
+            for (auto j = 0; j < window_width; j++)
+            {
+                unsigned char red = static_cast<unsigned char>(255.0 * j / (window_width - 1));
+                unsigned char green = static_cast<unsigned char>(255.0 * i / (window_height - 1));
+                unsigned char blue = 100;
 
-            int ir = int(255.999 * red);
-            int ig = int(255.999 * green);
-            int ib = int(255.999 * blue);
+                Color pixel = {red, green, blue, 255};
 
-            file << ir << ' ' << ig << ' ' << ib << '\n';
+                DrawPixel(j, i, pixel);
+            }
         }
+
+        EndDrawing();
     }
 
-    file.close();
+    CloseWindow();
 }
